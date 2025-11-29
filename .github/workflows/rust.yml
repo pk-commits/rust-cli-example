@@ -5,6 +5,7 @@ on:
     branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
+  workflow_dispatch:  # 👈 allows manual triggering
 
 env:
   CARGO_TERM_COLOR: always
@@ -17,7 +18,6 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # 🔍 Lint / format check step
       - name: Check formatting
         run: cargo fmt --all -- --check
 
@@ -26,4 +26,3 @@ jobs:
 
       - name: Run tests
         run: cargo test --verbose
-
