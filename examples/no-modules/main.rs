@@ -1,6 +1,6 @@
-use std::process::Command;
 use clap::{Arg, Command as ClapCommand}; // 👈 note the import + alias
 use serde_json::Value;
+use std::process::Command;
 
 fn run_command(command: &str) -> String {
     // Slightly safer split (handles multiple spaces, etc.)
@@ -45,7 +45,7 @@ fn main() {
         .author("Alfredo Deza")
         .about("lsblk in Rust")
         .arg(
-            Arg::new("device")        // 👈 was Arg::with_name(...)
+            Arg::new("device") // 👈 was Arg::with_name(...)
                 .help("Device to query")
                 .required(true)
                 .index(1),
