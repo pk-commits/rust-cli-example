@@ -1,6 +1,6 @@
-use clap::{Command, Arg};
-use clap::ColorChoice;
 use blkrs::run_lsblk;
+use clap::ColorChoice;
+use clap::{Arg, Command};
 
 fn main() {
     let matches = Command::new("lsblk")
@@ -12,7 +12,7 @@ fn main() {
             Arg::new("device")
                 .help("Device to query")
                 .required(true)
-                .index(1)
+                .index(1),
         )
         .get_matches();
 
